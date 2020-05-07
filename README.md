@@ -12,6 +12,7 @@ create DB name twitter <br>
 clone this repo<br>
 Open a terminal <br>
 update .env file with your system settings  <br> 
+run `npm run dev` <br>
 run `php artisan migrate`   <br> 
 run `php artisan serve` <br>
 run `npm run`

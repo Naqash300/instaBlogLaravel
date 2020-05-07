@@ -18,7 +18,14 @@ class PostsController extends Controller
     public function index()
     {
         $users = auth()->user()->following()->pluck('profiles.user_id');
-        $posts = Post::whereIn('user_id',$users)->with('user')->latest()->paginate(5);
+       $posts = Post::whereIn('user_id',$users)->with('user')->latest()->paginate(5);
+
+        if (!$posts || $posts == '')
+        {
+        $posts = Post::latest()->paginate(5);
+
+        }
+
         //return response()->json($posts);
 //        dd($posts);
         //$posts = Post::all()->sortBy("created_at");
