@@ -13,19 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-
-
+Route::get('/', 'PostsController@index');
 Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
 Route::get('/profile/{user}/edit', 'ProfilesController@edit')->name('profile.edit');//open edit form
 Route::patch('/profile/{user}', 'ProfilesController@update')->name('profile.update');//handle update
-Route::get("/p/create","PostsController@create");
-Route::post('/p','PostsController@store');
+Route::get("/p/create", "PostsController@create");
+Route::post('/p', 'PostsController@store');
 Route::get("/p/{post}", "PostsController@show");
-Route::post('/follow/{user}',"FollowsController@store");
+Route::post('/follow/{user}', "FollowsController@store");
 
 Auth::routes();
 

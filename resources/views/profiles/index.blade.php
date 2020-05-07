@@ -19,7 +19,7 @@
                     <a href="/profile/{{$user->id}}/edit">Edit profile</a>
                 @endcan
                 <div class="row">
-                    <div class="col-3"><strong>{{ $user->posts->count() }}</strong> posts</div>
+                    <div class="col-3"><strong>{{ $postCount }}</strong> posts</div>
                     <div class="col-3"><strong>{{$user->profile->followers->count()}}</strong> followers</div>
                     <div class="col-3"><strong>{{$user->following->count()}}</strong> following</div>
                 </div>
